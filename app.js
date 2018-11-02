@@ -5,7 +5,7 @@ var cors = require('cors');
 var favicon = require('serve-favicon');
 
 var app = express();
- app.use(cors());
+//  app.use(cors());
 //  const port=3000;
  var corsOptions = {
   origin: '*',
