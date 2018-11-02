@@ -68,6 +68,7 @@ public error:string;
   }
 
   facebookLogin(){
+    console.log(window.location.href);
     window.location.href = "https://angularnodelogin.herokuapp.com/auth/facebook" ;
   }
 
