@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
  
-  uri="http:localhost:3000/zom";
+  uri="https://angularnodelogin.herokuapp.com/zom";
   status: { code: any; };
 
   constructor(private http:HttpClient) { }

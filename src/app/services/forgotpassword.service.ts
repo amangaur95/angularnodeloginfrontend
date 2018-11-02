@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ForgotpasswordService {
 
-  uri="http://localhost:3000/zom";
+  uri="https://angularnodelogin.herokuapp.com/zom";
 
   constructor(private http:HttpClient) { }
 

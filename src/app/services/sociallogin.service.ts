@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class SocialloginService {
 
-  uri = "http://localhost:3000/zom";
+  uri = "https://angularnodelogin.herokuapp.com/zom";
   // url = "http://localhost:3000/zom";
   
   constructor(private http:HttpClient) { }

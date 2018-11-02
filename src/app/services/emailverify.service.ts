@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EmailverifyService {
-  uri="http://localhost:3000/zom"
+  uri="https://angularnodelogin.herokuapp.com/zom"
   constructor(private http:HttpClient) { }
 
   verifyEmail(id) : Observable<any>{

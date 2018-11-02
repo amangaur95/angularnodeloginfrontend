@@ -68,19 +68,19 @@ public error:string;
   }
 
   facebookLogin(){
-    window.location.href = "http://localhost:3000/auth/facebook" ;
+    window.location.href = "https://angularnodelogin.herokuapp.com/auth/facebook" ;
   }
 
   googleLogin(){
-    window.location.href = "http://localhost:3000/auth/google" ;
+    window.location.href = "https://angularnodelogin.herokuapp.com/auth/google" ;
   }
 
   twitterLogin(){
-    window.location.href = "http://localhost:3000/auth/twitter" ;
+    window.location.href = "https://angularnodelogin.herokuapp.com/auth/twitter" ;
   }
 
   linkedinLogin(){
-    window.location.href = "http://localhost:3000/auth/linkedin" ; 
+    window.location.href = "https://angularnodelogin.herokuapp.com/auth/linkedin" ; 
   }
 
 }
