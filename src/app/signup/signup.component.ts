@@ -108,4 +108,20 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
 
+  facebookLogin(){
+    window.location.href = "https://angularnodelogin.herokuapp.com/auth/facebook" ;
+  }
+
+  googleLogin(){
+    window.location.href = "https://angularnodelogin.herokuapp.com/auth/google" ;
+  }
+
+  twitterLogin(){
+    window.location.href = "https://angularnodelogin.herokuapp.com/auth/twitter" ;
+  }
+
+  linkedinLogin(){
+    window.location.href = "https://angularnodelogin.herokuapp.com/auth/linkedin" ; 
+  }
+  
 }
