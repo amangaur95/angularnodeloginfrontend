@@ -1,16 +1,28 @@
 <p-dialog header="Account is active through {{ provider_name }}" [(visible)]="display" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70" 
         [maximizable]="true" [baseZIndex]="10000">
   <div *ngIf="facebook_provider">
-    <button id="login_btn" class="btn btn-primary" (click)="facebookLogin()">LOG IN WITH {{ facebook_provider | uppercase }}</button>
+    <button class="btn btn-block btn-social btn-facebook" (click)="facebookLogin()">
+      <span class="fa fa-facebook"></span> LOG IN WITH {{ facebook_provider | uppercase }}
+    </button>
+    <!-- <button id="login_btn" class="btn btn-primary" (click)="facebookLogin()">LOG IN WITH {{ facebook_provider | uppercase }}</button> -->
   </div>
   <div *ngIf="google_provider">
-    <button id="login_btn" class="btn btn-danger" (click)="googleLogin()">LOG IN WITH {{ google_provider | uppercase }}</button>
+    <button class="btn btn-block btn-social btn-google" (click)="googleLogin()">
+      <span class="fa fa-google"></span> LOG IN WITH {{ google_provider | uppercase }}
+    </button>
+    <!-- <button id="login_btn" class="btn btn-danger" (click)="googleLogin()">LOG IN WITH {{ google_provider | uppercase }}</button> -->
   </div>
   <div *ngIf="linkedin_provider">
-    <button id="login_btn" class="btn btn-danger" (click)="linkedinLogin()">LOG IN WITH {{ linkedin_provider | uppercase }}</button>
+    <button class="btn btn-block btn-social btn-linkedin" (click)="linkedinLogin()">
+      <span class="fa fa-linkedin"></span> LOG IN WITH {{ linkedin_provider | uppercase }}
+    </button>
+    <!-- <button id="login_btn" class="btn btn-danger" (click)="linkedinLogin()">LOG IN WITH {{ linkedin_provider | uppercase }}</button> -->
   </div>
   <div *ngIf="twitter_provider">
-    <button id="login_btn" class="btn btn-danger" (click)="twitterLogin()">LOG IN WITH {{ twitter_provider | uppercase }}</button>
+    <button class="btn btn-block btn-social btn-twitter" (click)="twitterLogin()">
+      <span class="fa fa-twitter"></span> LOG IN WITH {{ twitter_provider | uppercase }}
+    </button>
+    <!-- <button id="login_btn" class="btn btn-danger" (click)="twitterLogin()">LOG IN WITH {{ twitter_provider | uppercase }}</button> -->
   </div>
   <p id="tag">If you wish to set a new password, click the button below and we'll mail you a password reset link</p>
   <p-footer>
