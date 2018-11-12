@@ -64,7 +64,6 @@ public error:string;
 
   ngOnInit() {
     this.userservice.logout();
-    // this.returnUrl = this.activateRoute.snapshot.queryParams['returnUrl'] || '/';
   }
 
   facebookLogin(){

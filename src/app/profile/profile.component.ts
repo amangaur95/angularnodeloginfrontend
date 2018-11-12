@@ -19,7 +19,6 @@ export class ProfileComponent implements OnInit {
     this.profileservice.getUserInfo()
     .subscribe((result_userinfo)=>{
       this.user=result_userinfo.user;
-      // console.log(this.user,"from ts file");
     },
     (err)=>{
       if(err.status==401){

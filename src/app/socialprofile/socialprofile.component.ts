@@ -22,7 +22,6 @@ export class SocialprofileComponent implements OnInit {
 
   ngOnInit() {
     this.getSocialProfile(this.token);
-    // this.socialProfile(localStorage.getItem('sociallogintoken'));
   }
 
   getSocialProfile(token){
@@ -32,13 +31,4 @@ export class SocialprofileComponent implements OnInit {
       this.user_details = result_profile.user;
     })
   }
-  // socialProfile(sociallogintoken){
-  //   this.socialloginservice.getSocialProfile(sociallogintoken)
-  //   .subscribe((result_profile)=>{
-  //     this.user_details = result_profile.user;
-  //   },
-  //   (err)=>{
-  //     console.log(err);
-  //   })
-  // }
 }
