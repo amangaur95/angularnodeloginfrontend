@@ -20,6 +20,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthtokeninterceptorService } from './services/authtokeninterceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogModule } from 'primeng/dialog';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { DialogModule } from 'primeng/dialog';
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    DialogModule
+    DialogModule,
+    AngularFontAwesomeModule
   ],
   providers: [
     AuthGuardService,
