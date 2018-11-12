@@ -64,12 +64,12 @@ public error:string;
 
   ngOnInit() {
     this.userservice.logout();
-    console.log(window.location.href);
+    console.log(window.location.href,"naresh----------------------------------");
     // this.returnUrl = this.activateRoute.snapshot.queryParams['returnUrl'] || '/';
   }
 
   facebookLogin(){
-    
+
     window.location.href = "https://angularnodelogin.herokuapp.com/auth/facebook" ;
   }
 
