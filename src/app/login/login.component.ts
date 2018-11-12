@@ -63,8 +63,8 @@ public error:string;
   }
 
   ngOnInit() {
-    this.userservice.logout();
     console.log(window.location.href,"naresh----------------------------------");
+    this.userservice.logout();
     // this.returnUrl = this.activateRoute.snapshot.queryParams['returnUrl'] || '/';
   }
 
