@@ -20,7 +20,6 @@ export class LoginService {
         map(result => {
           if(result.code==200){
             localStorage.setItem('token', result.token); 
-            // localStorage.setItem('user_id',result.user._id);
             this.toasterservice.successToaster(result.msg.str1, result.msg.str2);
             return true;
           }

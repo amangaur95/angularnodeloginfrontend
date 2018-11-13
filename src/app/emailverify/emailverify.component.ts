@@ -22,7 +22,6 @@ export class EmailverifyComponent implements OnInit {
     this.emailverifyservice.verifyEmail(this.id)
     .subscribe((result_verifystatus)=>{
       this.result_verifystatus=result_verifystatus;
-      console.log(result_verifystatus,"from emailverifyservice ")
     },
     (err)=>{
       console.log(err);

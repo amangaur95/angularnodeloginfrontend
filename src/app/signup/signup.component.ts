@@ -45,10 +45,8 @@ export class SignupComponent implements OnInit {
 
   addUser(){
     if(this.angForm.valid) {
-      console.log(this.angForm.value)
       this.signupservice.addUser(this.angForm.value)
       .subscribe((result)=>{
-        console.log(result)
         if(result.code==200){
           this.router.navigateByUrl('/login');
           this.toasterService.successToaster(result.msg.str1, result.msg.str2)
@@ -57,7 +55,6 @@ export class SignupComponent implements OnInit {
           if(result.exists_message){
             this.exists_message=result;
             this.provider_name=this.exists_message.provider_name;
-            console.log(this.exists_message.provider_name)
             for(let i=0;i<this.provider_name.length;i++){
               if(this.provider_name[i]=='facebook'){
                 this.facebook_provider=this.provider_name[i];
@@ -91,7 +88,6 @@ export class SignupComponent implements OnInit {
   }
 
   setPassword(){
-    console.log(this.email,"from set password function");
     this.forgotpasswordservice.setPassword(this.email)
     .subscribe((password_status)=>{
       if(password_status.code==200){

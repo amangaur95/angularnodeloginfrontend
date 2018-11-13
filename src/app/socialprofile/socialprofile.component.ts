@@ -15,7 +15,6 @@ export class SocialprofileComponent implements OnInit {
     private activatedroute: ActivatedRoute) {
       this.activatedroute.params.subscribe(params => {
         this.token = params['token'];
-        console.log(this.token);
         localStorage.setItem('token',this.token);
       })
      }
@@ -27,7 +26,6 @@ export class SocialprofileComponent implements OnInit {
   getSocialProfile(token){
     this.socialloginservice.getSocialProfile(token)
     .subscribe((result_profile)=>{
-      console.log(result_profile,"from ts")
       this.user_details = result_profile.user;
     })
   }
