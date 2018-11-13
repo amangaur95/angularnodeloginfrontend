@@ -21,6 +21,7 @@ import { AuthtokeninterceptorService } from './services/authtokeninterceptor.ser
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogModule } from 'primeng/dialog';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     DialogModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    CheckboxModule
   ],
   providers: [
     AuthGuardService,

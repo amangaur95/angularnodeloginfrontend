@@ -34,7 +34,8 @@ public error:string;
   createForm() {
     this.angForm = this.fb.group({
       email: ['', Validators.required ],
-      password: ['', Validators.required ]
+      password: ['', Validators.required ],
+      remember_me: ['']
    });
   }
 
