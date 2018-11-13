@@ -65,6 +65,9 @@
                   <div *ngIf="angForm.controls['email'].errors.email">
                     Please Enter valid email.
                   </div>
+                  <div *ngIf="angForm.controls['email'].hasError('pattern')">
+                    Email cannot consists spaces.
+                  </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-4">Password</label>
