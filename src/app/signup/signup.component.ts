@@ -75,7 +75,8 @@ export class SignupComponent implements OnInit {
             this.display = true;
           }
           else{
-            this.toasterService.errorToaster(result.msg.msg1,result.msg.msg2)
+            this.toasterService.errorToaster(result.msg.msg1,result.msg.msg2);
+            this.angForm.reset();
           }
         }
       })
