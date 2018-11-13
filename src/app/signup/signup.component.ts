@@ -35,10 +35,11 @@ export class SignupComponent implements OnInit {
 
   createForm() {
     this.angForm = this.fb.group({
-      name: ['', Validators.required ],
-      username: ['', Validators.required ],
+      name: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)] ],
+      username: ['', [Validators.required, Validators.pattern(/^\S*$/)] ],
       email: ['', Validators.compose([Validators.required, Validators.email]) ],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(15)]) ]
+      password: ['', Validators.compose([Validators.required, Validators.pattern(/^\S*$/),
+        Validators.minLength(6), Validators.maxLength(15)]) ]
    });
   }
 
