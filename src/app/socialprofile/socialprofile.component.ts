@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialloginService } from '../services/sociallogin.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-socialprofile',
@@ -12,7 +13,9 @@ export class SocialprofileComponent implements OnInit {
   token: any;
 
   constructor(private socialloginservice:SocialloginService,
-    private activatedroute: ActivatedRoute) {
+    private activatedroute: ActivatedRoute,
+    private userservice: UserService,
+    private router: Router) {
       this.activatedroute.params.subscribe(params => {
         this.token = params['token'];
         localStorage.setItem('token',this.token);
@@ -27,6 +30,13 @@ export class SocialprofileComponent implements OnInit {
     this.socialloginservice.getSocialProfile(token)
     .subscribe((result_profile)=>{
       this.user_details = result_profile.user;
+    },
+    (err)=>{
+      if(err.status==401){
+        this.userservice.logout();
+        this.router.navigate(['login'])
+      }
+      console.log(err);
     })
   }
 }
