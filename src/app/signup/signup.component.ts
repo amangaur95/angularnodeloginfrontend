@@ -118,7 +118,7 @@ export class SignupComponent implements OnInit {
     window.location.href = "https://angularnodelogin.herokuapp.com/auth/twitter" ;
   }
 
-  linkedinLogin(){
+  linkedinLogin(){ 
     window.location.href = "https://angularnodelogin.herokuapp.com/auth/linkedin" ; 
   }
   

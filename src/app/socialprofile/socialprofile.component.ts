@@ -29,7 +29,13 @@ export class SocialprofileComponent implements OnInit {
   getSocialProfile(token){
     this.socialloginservice.getSocialProfile(token)
     .subscribe((result_profile)=>{
-      this.user_details = result_profile.user;
+      if(result_profile.code==200){
+        this.user_details = result_profile.user;
+      }
+      if(result_profile.code==403){
+        this.userservice.logout();
+        this.router.navigate(['login'])
+      }
     },
     (err)=>{
       if(err.status==401){
@@ -38,5 +44,5 @@ export class SocialprofileComponent implements OnInit {
       }
       console.log(err);
     })
-  }
+  }  
 }

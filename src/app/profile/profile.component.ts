@@ -18,7 +18,13 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.profileservice.getUserInfo()
     .subscribe((result_userinfo)=>{
-      this.user=result_userinfo.user;
+      if(result_userinfo.code==200){
+        this.user=result_userinfo.user.name;
+      }
+      if(result_userinfo.code==403){
+        this.userservice.logout();
+        this.router.navigate(['login'])
+      }
     },
     (err)=>{
       if(err.status==401){
@@ -29,4 +35,5 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+  
 }
