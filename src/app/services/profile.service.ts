@@ -11,7 +11,7 @@ export class ProfileService {
 
   constructor(private http:HttpClient) { }
 
-  getUserInfo(): Observable<any>{
-    return this.http.get(`${this.uri}/getprofile`);
+  getUserInfo(user_id): Observable<any>{
+    return this.http.get(`${this.uri}/getprofile/${user_id}`);
   }
 }
