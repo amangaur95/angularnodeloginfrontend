@@ -14,20 +14,7 @@ export class LoginService {
   constructor(private http:HttpClient,
     private toasterservice:ToasterService) { }
 
-  login(user_info): Observable<boolean> {
-    return this.http.post<{token,user,msg,code}>(`${this.uri}/signin`, user_info)
-      .pipe(
-        map(result => {
-          if(result.code==200){
-            localStorage.setItem('token', result.token); 
-            this.toasterservice.successToaster(result.msg.str1, result.msg.str2);
-            return true;
-          }
-          else{
-            this.toasterservice.errorToaster(result.msg.str1, result.msg.str2);
-            return false;
-          }
-        })
-      );
-  }
+    login(user_info): Observable<any>{
+      return this.http.post(`${this.uri}/signin`, user_info);
+    }
 }

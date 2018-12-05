@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { first } from 'rxjs/operators';
+// import { first } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 import { LoginService } from '../services/login.service';
+import { ToasterService } from '../services/toaster.service';
  
 @Component({
   selector: 'app-login',
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
 public error:string;
   angForm: FormGroup;
   user: any;
+  user_id: any;
 
   constructor(private userservice: UserService,
     private fb: FormBuilder,
@@ -27,6 +29,7 @@ public error:string;
     private toastr: ToastrService,
     private activateRoute:ActivatedRoute,
     private loginservice:LoginService,
+    private toasterservice:ToasterService,
     ) { 
     this.createForm();
   }
@@ -42,10 +45,15 @@ public error:string;
   public submit(){
     if(this.angForm.valid){
       this.loginservice.login(this.angForm.value)
-      .pipe(first())
-      .subscribe((result_loginstatus)=>{
-        if(result_loginstatus==true){
-          this.router.navigateByUrl('profile');
+      .subscribe((login_status)=>{
+        if(login_status.code==200){
+          localStorage.setItem('token', login_status.token);
+          this.user_id = login_status.user._id;
+          this.router.navigateByUrl('/profile/'+this.user_id);
+          this.toasterservice.successToaster(login_status.msg.str1, login_status.msg.str2);
+        }
+        else{
+          this.toasterservice.errorToaster(login_status.msg.str1, login_status.msg.str2);
         }
       },
       (err)=>{

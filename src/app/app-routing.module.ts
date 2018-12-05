@@ -17,7 +17,7 @@ const routes: Routes = [
   { path:'emailverify/:id', component:EmailverifyComponent },
   { path:'forgotpassword', component:ForgotpasswordComponent },
   { path:'passwordreset/:id', component:ResetpasswordComponent },
-  { path:'profile', component:ProfileComponent, canActivate:[AuthGuardService] },
+  { path:'profile/:id', component:ProfileComponent, canActivate:[AuthGuardService] },
   { path:'socialprofile/:token', component:SocialprofileComponent },
 ];
 
